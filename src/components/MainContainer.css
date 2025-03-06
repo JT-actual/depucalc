@@ -1,0 +1,304 @@
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  margin-top: calc(72px + 20px); /* Navbar height + 20px spacing */
+}
+
+.content {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.main-title {
+  color: #333;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.calculator-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.calculator-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.calculator-row:hover {
+  background-color: #f1f3f5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.row-heading {
+  flex: 1;
+  padding-right: 2rem;
+}
+
+.row-heading h3 {
+  color: #2d3748;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.row-heading p {
+  color: #718096;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.currency-symbol {
+  position: absolute;
+  left: 1rem;
+  color: #718096;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+input {
+  width: 200px;
+  padding: 0.8rem 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #2d3748;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+input[name="averageHourlyRate"] {
+  padding-left: 2rem;
+}
+
+input:focus {
+  outline: none;
+  border-color: #007AFF;
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+}
+
+input::placeholder {
+  color: #a0aec0;
+  text-align: right;
+}
+
+.section-heading {
+  font-size: 1.5rem;
+  color: #2d3748;
+  font-weight: 600;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.percentage-symbol {
+  position: absolute;
+  right: 0.75rem;
+  color: #718096;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+input[type="number"] {
+  text-align: right;
+  padding-right: 1rem;
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[name="averageHourlyWage"],
+input[name="trailingPayroll"],
+input[name="schedulingManagerSalary"],
+input[name="replacementCost"],
+input[name="revenuePerLaborHour"] {
+  padding-left: 2rem;
+  padding-right: 1rem;
+}
+
+input[name="overtimePercentage"],
+input[name="quarterlyTurnover"],
+input[name="timeTheftImprovement"],
+input[name="overtimeImprovement"],
+input[name="overSchedulingImprovement"],
+input[name="schedulingImprovement"],
+input[name="turnoverImprovement"],
+input[name="calloutImprovement"] {
+  padding-right: 2rem; /* Make room for the % symbol */
+}
+
+.calculate-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px solid #e2e8f0;
+  width: 100%; /* Make container full width */
+}
+
+.calculate-button {
+  background-color: #3E27B7;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 600;
+  padding: 1rem 3rem;
+  border: none;
+  border-radius: 12px; /* Match row container border-radius */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(62, 39, 183, 0.2);
+  width: 100%; /* Make button full width */
+}
+
+.calculate-button:hover {
+  background-color: #331f96; /* Darker shade for hover */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(62, 39, 183, 0.3);
+}
+
+.calculate-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(62, 39, 183, 0.2);
+}
+
+.settings-dropdown {
+  margin-top: 2rem;
+  border-top: 2px solid #e2e8f0;
+  padding-top: 2rem;
+}
+
+.settings-toggle {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background-color: #f8f9fa;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2d3748;
+  transition: all 0.3s ease;
+}
+
+.settings-toggle:hover {
+  background-color: #f1f3f5;
+}
+
+.arrow-icon {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.arrow-icon.open {
+  transform: rotate(180deg);
+}
+
+.settings-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Match the gap from calculator-rows */
+}
+
+.settings-content.open {
+  max-height: 1000px;
+  opacity: 1;
+  margin-top: 2rem; /* Increased from 1rem to match other sections */
+  padding-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    padding: 1rem;
+    margin-top: calc(64px + 20px); /* Adjusted for smaller navbar on mobile */
+  }
+  
+  .content {
+    padding: 1.5rem;
+  }
+
+  .main-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .calculator-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .row-heading {
+    padding-right: 0;
+  }
+
+  .input-container {
+    width: 100%;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  .section-heading {
+    font-size: 1.25rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .calculate-button-container {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+  }
+
+  .calculate-button {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 0.875rem 2rem;
+  }
+
+  .settings-dropdown {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+  }
+
+  .settings-toggle {
+    padding: 0.875rem 1rem;
+    font-size: 1rem;
+  }
+
+  .settings-content.open {
+    margin-top: 1.5rem;
+  }
+} 
